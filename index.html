@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Asmaa</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fbe2f7;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff4081;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+        .heart {
+            color: #ff4081;
+            font-size: 3em;
+            animation: bounce 1s infinite;
+        }
+        .question {
+            font-size: 1.5em;
+            margin: 30px 0;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e73671;
+        }
+        .heart-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .final-message {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Add falling flowers */
+        .falling-flowers {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        .falling-flowers img {
+            position: absolute;
+            animation: fall 5s linear infinite;
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-container">
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+    </div>
+
+    <h1 id="question-text">Do you feel comfortable with me even though we haven't met yet?</h1>
+
+    <div class="question">
+        <div class="buttons">
+            <button class="button" onclick="nextPage('yes')">Yes</button>
+            <button class="button" onclick="nextPage('no')">No</button>
+        </div>
+    </div>
+
+    <div class="heart-container">
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+    </div>
+
+    <div class="falling-flowers" id="flowers"></div>
+
+    <script>
+        let currentPage = 0;
+        const questions = [
+            "Do you feel comfortable with me even though we haven't met yet?",
+            "Do you enjoy talking to me even if it's through a screen?",
+            "Do you feel a strong connection with me despite the distance?",
+            "Do you dream about the day we finally meet?",
+            "Do you feel like our love grows stronger each day?",
+            "Do you feel happy when I talk to you?",
+            "Do you believe our love will continue to grow even though we haven’t met yet?",
+            "Do you miss me when we're apart?",
+            "Do you like hearing words of love from me whenever we talk?",
+            "Do you feel like there's something special in our relationship, even with the distance?",
+            "Do you think love can be real even before meeting in person?",
+            "Do you imagine how special our first meeting will be?",
+            "Do you feel like you're a part of my life even when we’re far apart?",
+            "Do you imagine how we will feel when we finally meet?",
+            "Do you enjoy receiving surprise messages or love notes from me?",
+            "Do you feel comfortable talking to me no matter the distance?",
+            "Do you believe our love will withstand all challenges?",
+            "Do you dream of us living together in the future?",
+            "Do you feel like we become closer with each conversation?",
+            "Do you feel like the distance hasn’t affected your feelings for me?"
+        ];
+
+        function nextPage(answer) {
+            currentPage++;
+            if (currentPage < questions.length) {
+                document.getElementById('question-text').innerText = questions[currentPage];
+            } else {
+                displayFinalMessage();
+            }
+        }
+
+        function displayFinalMessage() {
+            const finalMessage = `
+                <div class="final-message">
+                    <h1>Asmaa, Every time I think of you, my heart fills with a warmth that words can hardly describe.</h1>
+                    <p>From the moment we first started talking, I knew there was something extraordinary about you. Your kindness, intelligence, and beauty, both inside and out, have captivated me in ways I never imagined possible. Though we haven’t met in person yet, the connection I feel with you is deep and genuine. Every conversation we have makes me feel closer to you, and every laugh shared strengthens the bond between us. It's amazing how someone so far away can make me feel so loved and understood.</p>
+                    <p>Even through distance, our connection feels like it transcends time and space. I find myself thinking about you often, imagining the day we will finally meet. The thought of seeing your smile in person, hearing your voice without the screen between us, fills me with excitement and joy. I dream of the moments we will create together, of walking hand in hand and sharing our lives in a way that will only make our love stronger.</p>
+                    <p>Your words have the power to brighten my darkest days. When I hear from you, I feel a sense of peace, knowing that you’re there, thinking of me just as I think of you. The love and affection you show me, even from afar, are beyond anything I’ve ever experienced. I feel as though I’ve found someone who understands me in ways no one else can.</p>
+                    <p>Asmaa, you are truly one of a kind. Your compassion, your patience, and your unwavering support make me want to be a better person every single day. With you, I’ve found someone who listens, who cares, and who loves me for who I am. I am so incredibly grateful for you and everything you do for me.</p>
+                    <p>Though the miles may keep us apart for now, I know that our love will only grow stronger with time. The distance may test us, but I believe in us. I believe in our love. And I believe that one day, we will be together, and nothing will stand in the way of our happiness. You make me feel special in ways no one else ever has. The way you talk about our future together, the way you express your love for me, fills me with hope.</p>
+                    <p>I can’t wait for the day when we are no longer separated by distance, and we can truly experience life together as one. Every moment spent with you, whether in person or through messages, is a moment I treasure. Your love is a gift, and I promise to hold it close and cherish it forever. You are my heart, my joy, and my reason for smiling each day.</p>
+                    <p>I love you more than words could ever express, and I will continue to love you with every breath I take. Our journey has just begun, and I’m excited to see where it leads us. You mean everything to me, Asmaa, and I can’t wait for the day when I can tell you all of this in person. Until then, I’ll keep loving you from afar, always thinking of you and holding you in my heart. Thank you for being my light, my hope, and my everything. Happy birthday every year you are with me.</p>
+                </div>
+            `;
+            document.body.innerHTML = finalMessage;
+        }
+
+        // Function to generate falling flowers
+        function createFallingFlowers() {
+            const flowers = [
+                'https://www.w3schools.com/w3images/flowers.jpg',
+                'https://www.w3schools.com/w3images/flower2.jpg',
+                'https://www.w3schools.com/w3images/flower3.jpg'
+            ];
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement('img');
+                flower.src = flowers[Math.floor(Math.random() * flowers.length)];
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.animationDelay = Math.random() * 5 + 's';
+                document.getElementById('flowers').appendChild(flower);
+            }
+        }
+
+        createFallingFlowers();
+    </script>
+
+</body>
+</html>
